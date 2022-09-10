@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confusion Matrix</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.webp" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Confusion Matrix</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Actually Positive</th>
+                    <th>Actually Negative</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TRUE</td>
+                    <td contenteditable oninput="main(this.id)" class="TPs" id="TPs">55</td>
+                    <td contenteditable oninput="main(this.id)" class="FPs" id="FPs">0</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td contenteditable oninput="main(this.id)" class="FNs" id="FNs">0</td>
+                    <td contenteditable oninput="main(this.id)" class="TNs" id="TNs">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="stats">
+            <p>accuracy = <span class="calSteps"><span id="accuracyCal1">?</span> = <span id="accuracyCal2">?</span> =</span> <span id="accuracy">?</span>%</p>
+            <p><span title="the Ratio of true positives to total predicted positives">precision</span> = <span class="calSteps"><span id="precisionCal1">?</span> = <span id="precisionCal2">?</span> =</span> <span id="precision">?</span>%</p>
+            <p><span title="the Ratio of true positives to total (actual) positives in the data">recall (Sensitivity)</span> = <span class="calSteps"><span id="recallCal1">?</span> = <span id="recallCal2">?</span> =</span> <span id="recall">?</span>%</p>
+            <p><span title="the harmonic mean of precision and recall">F-measure (F1 Score)</span> = <span class="calSteps"><span id="FMeasureCal1">?</span> = <span id="FMeasureCal2">?</span> =</span> <span id="FMeasure">?</span>%</p>
+            <p><span title="the Ratio of true negatives to total negatives in the data">specificity</span> = <span class="calSteps"><span id="specificityCal1">?</span> = <span id="specificityCal2">?</span> =</span> <span id="specificity">?</span>%</p>
+        </div>
+        </div>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/PingHuskar/BackgroundColorChangerJS/script.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/easing/EasePack.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
