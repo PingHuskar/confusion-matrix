@@ -116,16 +116,16 @@ body {
         }
     }
     .stats {
-        width: 60%;
+        width: 100%;
         margin-top: 20px;
         // border: 1px solid red;
         display: flex;
         flex-flow: column;
-        justify-content: start;
+        justify-content: flex-end;
         font-size: 1.5rem;
         &:hover {
             border: none;
-            color: white;
+            // color: white;
             font-weight: normal;
             p {
                 filter: blur(3px);

@@ -103,16 +103,15 @@ body {
   background: rgba(255, 69, 0, 0.8);
 }
 .container .stats {
-  width: 60%;
+  width: 100%;
   margin-top: 20px;
   display: flex;
   flex-flow: column;
-  justify-content: start;
+  justify-content: flex-end;
   font-size: 1.5rem;
 }
 .container .stats:hover {
   border: none;
-  color: white;
   font-weight: normal;
 }
 .container .stats:hover p {

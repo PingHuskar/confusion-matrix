@@ -1,4 +1,4 @@
-const searchParam = new URLSearchParams(window.location.search)
+const searchParam = new URLSearchParams(location.search)
 const init = () => {
     document.getElementById('TPs').innerText = searchParam.get('TP') || "2"
     document.getElementById('TNs').innerText = searchParam.get('TN') || "1"
@@ -8,6 +8,19 @@ const init = () => {
 }
 const main = () => {
     // `
+    const numRegex = /^\d+$/
+    if (!(numRegex.test(document.getElementById('TPs').innerText))) {
+        document.getElementById('TPs').innerText = 0
+    }
+    if (!(numRegex.test(document.getElementById('TNs').innerText))) {
+        document.getElementById('TNs').innerText = 0
+    }
+    if (!(numRegex.test(document.getElementById('FPs').innerText))) {
+        document.getElementById('FPs').innerText = 0
+    }
+    if (!(numRegex.test(document.getElementById('FNs').innerText))) {
+        document.getElementById('FNs').innerText = 0
+    }
     const TPs = parseInt(document.getElementById('TPs').innerText)
     const TNs = parseInt(document.getElementById('TNs').innerText)
     const FPs = parseInt(document.getElementById('FPs').innerText)
