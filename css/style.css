@@ -108,7 +108,7 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .container .stats:hover {
   border: none;
@@ -120,7 +120,7 @@ body {
 .container .stats p {
   text-transform: capitalize;
   text-align: center;
-  line-height: 6vh;
+  line-height: 5vh;
   font-weight: bold;
 }
 .container .stats p:hover {
