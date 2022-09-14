@@ -29,26 +29,26 @@ const main = () => {
     
     document.getElementById('nCal').innerHTML = `<span class="TPs">${TPs}</span> + <span class="TNs">${TNs}</span> + <span class="FPs">${FPs}</span> + <span class="FNs">${FNs}</span>`
     document.getElementById('n').innerText = N
-    document.getElementById('accuracyCal1').innerHTML = `(<span class="TPs">${TPs}</span> + <span class="TNs">${TNs}</span>) / ${N} * 100`
-    document.getElementById('accuracyCal2').innerText = `(${TPs+TNs} / ${N}) * 100`
-    const accuracy = ((TPs + TNs) / N * 100)
-    document.getElementById('accuracy').innerText = accuracy.toFixed(2)
-    const R2 = 1 - accuracy/100
+    document.getElementById('accuracyCal1').innerHTML = `(<span class="TPs">${TPs}</span> + <span class="TNs">${TNs}</span>) / ${N}`
+    document.getElementById('accuracyCal2').innerText = `(${TPs+TNs} / ${N})`
+    const accuracy = ((TPs + TNs) / N )
+    document.getElementById('accuracy').innerText = accuracy.toFixed(3)
+    const R2 = 1 - accuracy
     document.getElementById('r2').innerText = R2.toFixed(3)
     
-    document.getElementById('precisionCal1').innerHTML = `(<span class="TPs">${TPs}</span> / (<span class="TPs">${TPs}</span> + <span class="FPs">${FPs}</span>) ) * 100`
-    document.getElementById('precisionCal2').innerText = `(${TPs} / ${TPs + FPs}) * 100`
-    const precision = ((TPs) / (TPs + FPs) * 100)
+    document.getElementById('precisionCal1').innerHTML = `(<span class="TPs">${TPs}</span> / (<span class="TPs">${TPs}</span> + <span class="FPs">${FPs}</span>) ) `
+    document.getElementById('precisionCal2').innerText = `(${TPs} / ${TPs + FPs}) `
+    const precision = ((TPs) / (TPs + FPs) )
     document.getElementById('precision').innerText = precision.toFixed(2)
     
-    document.getElementById('specificityCal1').innerHTML = `(<span class="TNs">${TNs}</span> / (<span class="TNs">${TNs}</span> + <span class="FPs">${FPs}</span>) ) * 100`
-    document.getElementById('specificityCal2').innerText = `(${TNs} / ${TNs + FPs}) * 100`
-    const specificity = ((TNs) / (TNs + FPs) * 100)
+    document.getElementById('specificityCal1').innerHTML = `(<span class="TNs">${TNs}</span> / (<span class="TNs">${TNs}</span> + <span class="FPs">${FPs}</span>) ) `
+    document.getElementById('specificityCal2').innerText = `(${TNs} / ${TNs + FPs}) `
+    const specificity = ((TNs) / (TNs + FPs) )
     document.getElementById('specificity').innerText = specificity.toFixed(2)
     
-    document.getElementById('recallCal1').innerHTML = `(<span class="TPs">${TPs}</span> / (<span class="TPs">${TPs}</span> + <span class="FNs">${FNs}</span>) ) * 100`
-    document.getElementById('recallCal2').innerText = `(${TPs} / ${TPs + FNs}) * 100`
-    const recall = ((TPs) / (TPs + FNs) * 100)
+    document.getElementById('recallCal1').innerHTML = `(<span class="TPs">${TPs}</span> / (<span class="TPs">${TPs}</span> + <span class="FNs">${FNs}</span>) ) `
+    document.getElementById('recallCal2').innerText = `(${TPs} / ${TPs + FNs}) `
+    const recall = ((TPs) / (TPs + FNs) )
     document.getElementById('recall').innerText = recall.toFixed(2)
     
     document.getElementById('FMeasureCal1').innerHTML = `(2*${recall.toFixed(2)}*${precision.toFixed(2)})/(${recall.toFixed(2)}+${precision.toFixed(2)})`
@@ -76,6 +76,14 @@ const main = () => {
     document.getElementById('PO').innerText = `${PreTestOdds}`
     document.getElementById('POACal').innerHTML = `${P2} / ${P1}`
     document.getElementById('POA').innerText = `${PreTestOddsAgainst}`
+
+    const QSN = (recall - Q1) / Q2
+    const QSP = (specificity - Q2) / Q1
+    document.getElementById('QSNCal').innerHTML = `(${recall.toFixed(3)} - ${Q1}) / ${Q2}`
+    document.getElementById('QSN').innerText = `${QSN.toFixed(3)}`
+    document.getElementById('QSPCal').innerHTML = `(${specificity.toFixed(3)} - ${Q2}) / ${Q1}`
+    document.getElementById('QSP').innerText = `${QSP.toFixed(3)}`
+
 }
 init()
 

@@ -123,10 +123,12 @@ body {
         flex-flow: column;
         justify-content: flex-end;
         font-size: 1rem;
+        cursor: none;
         &:hover {
             border: none;
             // color: white;
             font-weight: normal;
+            user-select: none;
             p {
                 filter: blur(3px);
             }
